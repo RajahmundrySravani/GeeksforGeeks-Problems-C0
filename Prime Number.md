@@ -25,7 +25,7 @@ false
 
 #### Solution 1 (Java)
 
-- **Submitted:** 2026-09-27 21:16:36
+- **Submitted:** 2026-10-01 06:13:55
 - **Status:** Correct
 - **Marks:** 0
 
@@ -47,7 +47,7 @@ class Solution {
 
 #### Solution 2 (Java)
 
-- **Submitted:** 2026-07-27 13:32:05
+- **Submitted:** 2026-09-27 21:16:36
 - **Status:** Correct
 - **Marks:** 0
 
@@ -69,7 +69,7 @@ class Solution {
 
 #### Solution 3 (Java)
 
-- **Submitted:** 2026-07-27 13:30:33
+- **Submitted:** 2026-07-27 13:32:05
 - **Status:** Correct
 - **Marks:** 0
 
@@ -91,7 +91,7 @@ class Solution {
 
 #### Solution 4 (Java)
 
-- **Submitted:** 2026-07-26 15:27:54
+- **Submitted:** 2026-07-27 13:30:33
 - **Status:** Correct
 - **Marks:** 0
 
@@ -113,27 +113,24 @@ class Solution {
 
 #### Solution 5 (Java)
 
-- **Submitted:** 2025-06-10 23:24:19
+- **Submitted:** 2026-07-26 15:27:54
 - **Status:** Correct
 - **Marks:** 0
 
 ```java
 class Solution {
-  public:
-    bool isPrime(int n) {
+    static boolean isPrime(int n) {
         // code here
-        int c =0;
-        if (n==1) return 1;
-        for(int i = 1; i <= n; i++)
-        {
-        
-            if( n%i == 0 ) c++ ;
-            if(c>2) return 0;
+        if(n <= 1) return false;
+        if(n == 2 || n == 3) return true;
+        if(n % 2 == 0) return false;
+        if(n % 3 == 0) return false;
+        for(int i = 5; i * i <= n; i += 6) {
+            if(n % i == 0 || n % (i + 2) == 0) return false;
         }
-        if (c == 2) return 1;
-        else return 0;
+        return true;
     }
-};
+}
 ```
 
-*Generated on: 27/9/2026, 9:26:55 pm*
+*Generated on: 1/10/2026, 6:16:31 am*
